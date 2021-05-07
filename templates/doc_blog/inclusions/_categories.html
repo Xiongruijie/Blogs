@@ -1,0 +1,25 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+<div class="widget widget-category">
+    <h3 class="widget-title">分类</h3>
+    <ul>
+        {% for category in category_list %}
+            <li>
+                <a href="{% url 'doc_blog:category' category.pk %}"> {{ category.name }} <span class="post-count"></span></a>
+            </li>
+        {% empty %}
+            暂无分类！
+        {% endfor %}
+
+    </ul>
+</div>
+
